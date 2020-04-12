@@ -1,13 +1,28 @@
-﻿class Message {
-    constructor(username, text, when) {
-        this.userName = username;
-        this.text = text;
-        this.when = when;
+﻿if (file == null) {
+    class Message {
+        constructor(username, text, when) {
+            this.userName = username;
+            this.text = text;
+            this.when = when;
+        }
+    }
+} else {
+    class MessageFileModel {
+        constructor(username, text, when) {
+            this.userName = username;
+            this.File = file;
+            this.text = text;
+            this.when = when;
+        }
     }
 }
 
+
+
+
 // userName is declared in razor page.
 const username = userName;
+const file = document.getElementById("messageFile");
 const textInput = document.getElementById('messageText');
 const whenInput = document.getElementById('when');
 const chat = document.getElementById('chat');

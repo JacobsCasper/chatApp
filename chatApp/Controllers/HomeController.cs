@@ -47,7 +47,9 @@ namespace chatApp.Controllers
                 message.UserId = sender.Id;
                 await _context.Messages.AddAsync(message);
                 await _context.SaveChangesAsync();
-                return Ok();
+
+                var messages = await _context.Messages.ToListAsync();
+                return View(messages);
             }
 
             return Error();
